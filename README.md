@@ -1,4 +1,3 @@
-```markdown
 # 🛠️ 我的 Dotfiles 托管库
 
 这是我的个人配置文件（dotfiles）仓库，使用 [chezmoi](https://www.chezmoi.io/) 进行管理。
