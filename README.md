@@ -9,7 +9,10 @@
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply ShangYJQ
 ```
-
+或
+```bash
+chezmoi -- init --apply ShangYJQ
+```
 ---
 
 ## 💡 日常操作指南
