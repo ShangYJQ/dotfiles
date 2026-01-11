@@ -11,17 +11,17 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply ShangYJQ
 ```
 或
 ```bash
-chezmoi -- init --apply ShangYJQ
+chezmoi init --apply ShangYJQ
 ```
 ---
 
 ## 💡 日常操作指南
 
 ### 1. 修改配置
-不要直接修改家目录下的文件，使用以下命令：
+修改家目录下的文件，使用以下命令：
 ```bash
-chezmoi edit ~/.zshrc        # 编辑配置文件
-chezmoi apply                # 应用改动到系统
+nvim ~/.zshrc
+chezmoi re-add
 ```
 *提示：如果你想在保存后立即生效，可以使用 `chezmoi edit --apply ~/.zshrc`*
 
