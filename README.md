@@ -13,6 +13,14 @@ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply ShangYJQ
 ```bash
 chezmoi init --apply ShangYJQ
 ```
+## 安装其他软件
+```bash
+#oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# 安装字体
+sudo pacman -S noto-fonts-cjk ttf-cascadia-code-nerd
+```
+
 ---
 
 ## 💡 日常操作指南
