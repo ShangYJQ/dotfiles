@@ -7,6 +7,12 @@ environment {
     QT_QPA_PLATFORMTHEME "qt6ct"
 }
 
+
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 20
+}
+
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://yalter.github.io/niri/Configuration:-Input
