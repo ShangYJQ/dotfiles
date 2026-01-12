@@ -4,12 +4,12 @@
 
 ## 🚀 快速开始 (新机器部署)
 
-在新机器上，只需一行命令即可全自动安装 `chezmoi` 并同步所有配置：
+在新机器上(需要 `git`)，只需一行命令即可全自动安装 `chezmoi` 并同步所有配置：
 
 ```bash
 sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply ShangYJQ
 ```
-或
+或者你已经安装了 `chezmoi`
 ```bash
 chezmoi init --apply ShangYJQ
 ```
