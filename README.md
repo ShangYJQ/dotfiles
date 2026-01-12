@@ -19,6 +19,8 @@ chezmoi init --apply ShangYJQ
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # 安装字体
 sudo pacman -S noto-fonts-cjk ttf-cascadia-code-nerd
+# 安装光标
+paru -S bibata-cursor-theme-bin
 ```
 
 ---
