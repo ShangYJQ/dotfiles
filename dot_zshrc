@@ -37,7 +37,7 @@ alias la='eza --icons -l -a --git --header --total-size --time-style=long-iso'
 alias lt='eza --icons --tree --level=2'
 
 # 使用 bat 代替 cat
-alias cat='bat'
+# alias cat='bat'
 
 alias c='clear'
 
