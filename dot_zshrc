@@ -30,6 +30,12 @@ export EDITOR=nvim
 alias svim="sudo -E nvim"
 alias vwiki='xdg-open $(fd . /usr/share/doc/arch-wiki-zh-cn/html/ | fzf)'
 
+# 使用 eza 来代替 ls
+alias ls='eza --icons --group-directories-first'
+alias ll='eza --icons -l --git --header --total-size --time-style=long-iso'
+alias la='eza --icons -l -a --git --header --total-size --time-style=long-iso'
+alias lt='eza --icons --tree --level=2'
+
 function proxy() {
     # 如果没有传参数，默认使用 127.0.0.1
     local host="${1:-127.0.0.1}"
