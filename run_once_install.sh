@@ -14,6 +14,7 @@ PACMAN_PKGS=(
     hypridle
     eza
     kitty
+    fzf
 )
 
 AUR_PKGS=(
@@ -51,6 +52,13 @@ if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
 else
     echo "zsh-autosuggestions 已存在，跳过。"
 fi
+
+echo ">> 切换默认 Shell 为 zsh..."
+
+CURRENT_USER=$(whoami)
+sudo chsh -s /usr/bin/zsh $CURRENT_USER
+
+echo "默认 Shell 已更改，请重新登录或重启终端生效。"
 
 echo ">>安装其他桌面软件"
 
