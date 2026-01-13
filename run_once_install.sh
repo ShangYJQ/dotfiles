@@ -12,6 +12,8 @@ PACMAN_PKGS=(
     papirus-icon-theme
     qt6ct
     hypridle
+    eza
+    kitty
 )
 
 AUR_PKGS=(
@@ -30,6 +32,24 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 else
     echo ">>已经有omz了？"
+fi
+
+ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
+
+echo ">> 安装 Oh My Zsh 插件..."
+
+if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
+    echo "正在下载 zsh-syntax-highlighting..."
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+else
+    echo "zsh-syntax-highlighting 已存在，跳过。"
+fi
+
+if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
+    echo "正在下载 zsh-autosuggestions..."
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+else
+    echo "zsh-autosuggestions 已存在，跳过。"
 fi
 
 echo ">>安装其他桌面软件"
