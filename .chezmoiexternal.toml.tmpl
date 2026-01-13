@@ -1,14 +1,18 @@
 [".config/nvim"]
     type = "git-repo"
+    {{- if .ssh }}
     url = "git@github.com:ShangYJQ/nvim-lite.git"
-    refreshPeriod = "168h"
+    {{- else }}
+    url = "https://github.com/ShangYJQ/nvim-lite.git"
+    {{- end }}
+    refreshPeriod = "24h"
 
 [".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
     type = "git-repo"
     url = "https://github.com/zsh-users/zsh-syntax-highlighting.git"
-    refreshPeriod = "168h" # 每周拉取一次更新
+    refreshPeriod = "24h"
 
 [".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
     type = "git-repo"
     url = "https://github.com/zsh-users/zsh-autosuggestions.git"
-    refreshPeriod = "168h"
+    refreshPeriod = "24h"

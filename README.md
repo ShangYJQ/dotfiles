@@ -4,26 +4,16 @@
 
 ## 🚀 快速开始 (新机器部署)
 
-在新机器上(需要 `git`)，只需一行命令即可全自动安装 `chezmoi` 并同步所有配置：
+在新机器上(需要 `git` `paru`)，只需一行命令即可全自动安装并同步所有配置：
 
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply ShangYJQ
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply --data ssh=true ShangYJQ
 ```
 或者你已经安装了 `chezmoi`
 ```bash
-chezmoi init --apply ShangYJQ
+chezmoi init --apply --data ssh=true ShangYJQ
 ```
-## 安装其他软件
-```bash
-#oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# 安装字体
-sudo pacman -S noto-fonts-cjk ttf-cascadia-code-nerd
-# 安装光标
-paru -S bibata-cursor-theme-bin
-```
-
----
+--
 
 ## 💡 日常操作指南
 
