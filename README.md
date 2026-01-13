@@ -7,11 +7,11 @@
 在新机器上(需要 `git` `paru`)，只需一行命令即可全自动安装并同步所有配置：
 
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply --data ssh=true ShangYJQ
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply --promptBool ssh=true ShangYJQ
 ```
 或者你已经安装了 `chezmoi`
 ```bash
-chezmoi init --apply --data ssh=true ShangYJQ
+chezmoi init --apply --promptBool ssh=true ShangYJQ
 ```
 --
 
