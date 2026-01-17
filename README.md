@@ -2,37 +2,29 @@
 
 这是我的个人配置文件（dotfiles）仓库，使用 [chezmoi](https://www.chezmoi.io/) 进行管理。
 
-## 🚀 快速开始 (新机器部署)
+## 同步
 
-在新机器上(需要 `git` `paru`)，只需一行命令即可全自动安装并同步所有配置：
-
+### 在新机器上(需要 `git` `paru` `chezmoi`)：
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply --promptBool ssh=true ShangYJQ
-```
-或者你已经安装了 `chezmoi`
-```bash
-chezmoi init --apply --promptBool ssh=true ShangYJQ
-```
---
-
-## 💡 日常操作指南
-
-### 1. 修改配置
-修改家目录下的文件，使用以下命令：
-```bash
-nvim ~/.zshrc
-chezmoi re-add
-```
-*提示：如果你想在保存后立即生效，可以使用 `chezmoi edit --apply ~/.zshrc`*
-
-### 2. 添加新配置
-如果你想备份一个新的文件：
-```bash
-chezmoi add ~/.gitconfig
+chezmoi init --apply ShangYJQ
 ```
 
-### 3. 在其他机器获取更新
+## 依赖安装
 ```bash
-chezmoi update
+chezmoi cd && ./install.sh
+```
+
+## 其他
+```bash
+#安装omz
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# 链接omz插件
+mkdir -p ~/.oh-my-zsh/custom/plugins
+ln -s /usr/share/zsh/plugins/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+ln -s /usr/share/zsh/plugins/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+# clone nvim config
+git clone git@github.com:ShangYJQ/nvim-lite.git ~/.config/nvim
 ```
 
