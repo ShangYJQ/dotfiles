@@ -21,17 +21,23 @@ PACMAN_PKGS=(
     zsh
     zsh-autosuggestions
     zsh-syntax-highlighting
+    qt6-svg
+    qt6-virtualkeyboard
+    qt6-multimedia-ffmpeg
 )
 
 AUR_PKGS=(
     neovim-nightly-bin
     gpu-screen-recorder
     noctalia-shell
+    sddm-silent-theme-git
     bibata-cursor-theme-bin
 )
 
-echo "准备安装所需的软件和依赖"
+echo ">> 准备安装所需的软件和依赖"
 echo "------------------------"
+
+echo ">> 安装软件包"
 
 sudo pacman -S --needed --noconfirm "${PACMAN_PKGS[@]}"
 

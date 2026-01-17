@@ -26,5 +26,22 @@ ln -s /usr/share/zsh/plugins/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins
 
 # clone nvim config
 git clone git@github.com:ShangYJQ/nvim-lite.git ~/.config/nvim
+
+# 配置 sddm 主题
+sudo mkdir /etc/sddm.conf.d/
+
+sudo tee /etc/sddm.conf.d/theme.conf <<'EOF'
+[General]
+InputMethod=qtvirtualkeyboard
+GreeterEnvironment=QML2_IMPORT_PATH=/usr/share/sddm/themes/silent/components/,QT_IM_MODULE=qtvirtualkeyboard
+
+[Theme]
+Current=silent
+EOF
+
+# 测试 sddm
+cd /usr/share/sddm/themes/silent/
+./test.sh
+
 ```
 
