@@ -6,7 +6,7 @@
 
 ### 在新机器上(需要 `git` `paru` `chezmoi`)：
 ```bash
-chezmoi init --apply ShangYJQ
+chezmoi init --apply git@github.com:ShangYJQ/dotfiles.git
 ```
 
 ## 依赖安装
