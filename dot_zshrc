@@ -9,9 +9,12 @@ zstyle ':omz:update' frequency 7
 
 # ENABLE_CORRECTION="true"
 
-plugins=(git
+plugins=(
         z
         fzf
+        git
+        sudo
+        extract
         copypath
         zsh-autosuggestions
         zsh-syntax-highlighting
