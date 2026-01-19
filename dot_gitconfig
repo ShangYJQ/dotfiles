@@ -3,3 +3,5 @@
 	email = 421207553@qq.com
 [init]
 	defaultBranch = main
+[core]
+	autocrlf = input
