@@ -25,6 +25,8 @@ PACMAN_PKGS=(
     qt6-virtualkeyboard
     qt6-multimedia-ffmpeg
     seahorse
+    cliphist
+    wl-clipboard
 )
 
 AUR_PKGS=(
