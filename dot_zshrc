@@ -27,6 +27,7 @@ export LANGUAGE=zh_CN:en_US
 export FZF_DEFAULT_COMMAND='fd --type f'
 export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
 export EDITOR=nvim
+export PATH="/home/yjq/.bun/bin:$PATH"
 
 alias svim="sudo -E nvim"
 alias vwiki='xdg-open $(fd . /usr/share/doc/arch-wiki-zh-cn/html/ | fzf)'
@@ -44,6 +45,9 @@ alias c='clear'
 
 # 修复kitty的ssh问题
 alias ssh="kitty +kitten ssh"
+
+alias yay="paru"
+alias hx="helix"
 
 # 终端查看剪切板历史
 alias clipfzf='cliphist list | fzf --no-sort | cliphist decode | wl-copy'
