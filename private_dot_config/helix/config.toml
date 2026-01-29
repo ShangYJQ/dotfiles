@@ -1,0 +1,40 @@
+theme = "catppuccin_mocha"
+
+[editor]
+line-number = "relative"
+auto-format = true
+cursorline = true
+
+path-completion = true
+completion-trigger-len = 3
+
+bufferline = "multiple"
+
+clipboard-provider = "wayland"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.file-picker]
+hidden = false
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "普通"
+mode.insert = "插入"
+mode.select = "选择"
+diagnostics = ["warning", "error"]
+workspace-diagnostics = ["warning", "error"]
+
+[editor.indent-guides]
+render = true
+character = "|"
+skip-levels = 1
+
+[editor.inline-diagnostics]
+other-lines = "warning"
+
+[editor.lsp]
+display-inlay-hints = true
