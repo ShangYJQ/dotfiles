@@ -1,4 +1,4 @@
-theme = "catppuccin_mocha"
+theme = "gruvbox-material"
 
 [editor]
 line-number = "relative"
@@ -6,7 +6,7 @@ auto-format = true
 cursorline = true
 
 path-completion = true
-completion-trigger-len = 3
+completion-trigger-len = 2
 
 bufferline = "multiple"
 
@@ -20,7 +20,7 @@ hidden = false
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name"]
-right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+right = ["file-type", "diagnostics", "selections", "position", "file-encoding", "file-line-ending"]
 separator = "│"
 mode.normal = "普通"
 mode.insert = "插入"
@@ -30,11 +30,32 @@ workspace-diagnostics = ["warning", "error"]
 
 [editor.indent-guides]
 render = true
-character = "|"
+character = "▏"
 skip-levels = 1
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+nnbsp = "␣"
+tab = "→"
+newline = "⏎"
+tabpad = "·"
 
 [editor.inline-diagnostics]
 other-lines = "warning"
 
 [editor.lsp]
 display-inlay-hints = true
+
+[keys.normal]
+"S-k" = "page_up"
+"S-j" = "page_down"
+"S-up" = "page_up"
+"S-down" = "page_down"
