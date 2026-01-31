@@ -1,9 +1,13 @@
-theme = "gruvbox-material"
+theme = "everforest_dark"
 
 [editor]
 line-number = "relative"
 auto-format = true
 cursorline = true
+popup-border = "popup"
+color-modes = true
+rainbow-brackets = true
+default-yank-register = "+"
 
 path-completion = true
 completion-trigger-len = 2
@@ -11,6 +15,10 @@ completion-trigger-len = 2
 bufferline = "multiple"
 
 clipboard-provider = "wayland"
+
+[editor.auto-save]
+after-delay.enable = true
+after-delay.timeout = 3000
 
 [editor.cursor-shape]
 insert = "bar"
@@ -20,11 +28,11 @@ hidden = false
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name"]
-right = ["file-type", "diagnostics", "selections", "position", "file-encoding", "file-line-ending"]
+right = ["file-type", "diagnostics", "position", "position-percentage", "file-encoding", "file-line-ending"]
 separator = "│"
-mode.normal = "普通"
-mode.insert = "插入"
-mode.select = "选择"
+mode.normal = " "
+mode.insert = " "
+mode.select = " "
 diagnostics = ["warning", "error"]
 workspace-diagnostics = ["warning", "error"]
 
@@ -49,13 +57,18 @@ newline = "⏎"
 tabpad = "·"
 
 [editor.inline-diagnostics]
-other-lines = "warning"
+cursor-line = "error"
+other-lines = "disable"
 
 [editor.lsp]
 display-inlay-hints = true
+display-progress-messages = true
 
 [keys.normal]
 "S-k" = "page_up"
 "S-j" = "page_down"
 "S-up" = "page_up"
 "S-down" = "page_down"
+
+[editor.word-completion]
+trigger-length = 2
