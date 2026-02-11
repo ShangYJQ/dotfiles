@@ -62,19 +62,21 @@ function nv() {
 	disown
 }
 
-function proxy() {
-	# 如果没有传参数，默认使用 127.0.0.1
-	local host="${1:-127.0.0.1}"
-	local port="10808"
+function nvp() { cd "$(zoxide query -i)" && nvim . }
 
-	export http_proxy="http://${host}:${port}"
-	export https_proxy="http://${host}:${port}"
-	export all_proxy="socks5://${host}:${port}"
+# function proxy() {
+# 	# 如果没有传参数，默认使用 127.0.0.1
+# 	local host="${1:-127.0.0.1}"
+# 	local port="10808"
+#
+# 	export http_proxy="http://${host}:${port}"
+# 	export https_proxy="http://${host}:${port}"
+# 	export all_proxy="socks5://${host}:${port}"
+#
+# 	echo "终端代理已开启 -> ${host}:${port}"
+# }
 
-	echo "终端代理已开启 -> ${host}:${port}"
-}
-
-alias unproxy='unset http_proxy; unset https_proxy; unset all_proxy; echo "终端代理已关闭"'
+# alias unproxy='unset http_proxy; unset https_proxy; unset all_proxy; echo "终端代理已关闭"'
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
