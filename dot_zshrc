@@ -4,20 +4,19 @@ ZSH_THEME="robbyrussell"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
 
-zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto # update automatically without asking
 zstyle ':omz:update' frequency 7
 
 # ENABLE_CORRECTION="true"
 
 plugins=(
-        z
-        fzf
-        git
-        sudo
-        extract
-        copypath
-        zsh-autosuggestions
-        zsh-syntax-highlighting
+	fzf
+	git
+	sudo
+	extract
+	copypath
+	zsh-autosuggestions
+	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -28,6 +27,10 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 export PATH="$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
 export EDITOR=nvim
 export PATH="/home/yjq/.bun/bin:$PATH"
+# export PATH="/home/yjq/.local/share/neovim/bin:$PATH"
+
+export PATH="$HOME/.local/share/neovim/bin:$PATH"
+export PATH=$PATH:$(go env GOPATH)/bin
 
 alias svim="sudo -E nvim"
 alias vwiki='xdg-open $(fd . /usr/share/doc/arch-wiki-zh-cn/html/ | fzf)'
@@ -37,6 +40,8 @@ alias ls='eza --icons --group-directories-first'
 alias ll='eza --icons -l --git --header --total-size --time-style=long-iso'
 alias la='eza --icons -l -a --git --header --total-size --time-style=long-iso'
 alias lt='eza --icons --tree --level=2'
+
+source /home/yjq/.cargo/env
 
 # 使用 bat 代替 cat
 # alias cat='bat'
@@ -52,16 +57,21 @@ alias hx="helix"
 # 终端查看剪切板历史
 alias clipfzf='cliphist list | fzf --no-sort | cliphist decode | wl-copy'
 
-function proxy() {
-    # 如果没有传参数，默认使用 127.0.0.1
-    local host="${1:-127.0.0.1}"
-    local port="10808"
+function nv() {
+	neovide "$@" &
+	disown
+}
 
-    export http_proxy="http://${host}:${port}"
-    export https_proxy="http://${host}:${port}"
-    export all_proxy="socks5://${host}:${port}"
-    
-    echo "终端代理已开启 -> ${host}:${port}"
+function proxy() {
+	# 如果没有传参数，默认使用 127.0.0.1
+	local host="${1:-127.0.0.1}"
+	local port="10808"
+
+	export http_proxy="http://${host}:${port}"
+	export https_proxy="http://${host}:${port}"
+	export all_proxy="socks5://${host}:${port}"
+
+	echo "终端代理已开启 -> ${host}:${port}"
 }
 
 alias unproxy='unset http_proxy; unset https_proxy; unset all_proxy; echo "终端代理已关闭"'
@@ -69,12 +79,14 @@ alias unproxy='unset http_proxy; unset https_proxy; unset all_proxy; echo "终�
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	command yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
+	IFS= read -r -d '' cwd <"$tmp"
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
 
 function qkgit() {
-    local msg="${*:-dev}"
-    git add . && git commit -m "$msg" && git push
+	local msg="${*:-dev}"
+	git add . && git commit -m "$msg" && git push
 }
+
+eval "$(zoxide init zsh)"
