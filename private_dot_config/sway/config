@@ -46,6 +46,9 @@ exec_always --no-startup-id hypridle
 
 ### Input configuration
 
+input "type:touchpad" {
+    events disabled_on_external_mouse
+}
 input "type:pointer" {
     accel_profile flat
 }
@@ -232,6 +235,9 @@ bindsym $mod+r mode "resize"
 
 default_border pixel 2
 default_floating_border pixel 2
+
+gaps inner 4
+gaps outer 4
 
 include /etc/sway/config.d/*
 
