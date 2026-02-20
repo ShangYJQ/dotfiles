@@ -28,6 +28,7 @@ PACMAN_PKGS=(
 	cliphist
 	wl-clipboard
 	zoxide
+	slurp
 )
 
 AUR_PKGS=(
