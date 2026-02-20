@@ -29,6 +29,7 @@ PACMAN_PKGS=(
 	wl-clipboard
 	zoxide
 	slurp
+	swappy
 )
 
 AUR_PKGS=(
