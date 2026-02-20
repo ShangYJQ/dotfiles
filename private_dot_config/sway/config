@@ -22,6 +22,7 @@ set $menu "qs -c noctalia-shell ipc call launcher toggle"
 for_window [app_id="org.gnome.Nautilus"] floating enable
 
 seat seat0 xcursor_theme Bibata-Modern-Classic 20
+font pango:CaskaydiaCove Nerd Font, Noto Sans CJK SC 10
 
 exec_always --no-startup-id fcitx5 -d
 ### Output configuration
