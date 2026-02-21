@@ -50,7 +50,8 @@ exec fcitx5 -d -r
 exec --no-startup-id elephant
 exec_always --no-startup-id walker --gapplication-service
 
-exec_always --no-startup-id swaync
+# exec_always --no-startup-id swaync
+exec_always --no-startup-id mako
 
 ### Output configuration
 #
