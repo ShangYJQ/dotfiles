@@ -10,8 +10,8 @@
 @define-color outline #646789;
 
 * {
-	font-family: "CaskaydiaCove Nerd Font Propo", "CaskaydiaCove NFP", monospace;
 	all: unset;
+	font-family: "CaskaydiaCove Nerd Font Propo", "CaskaydiaCove NFP", monospace;
 }
 
 .normal-icons {
