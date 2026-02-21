@@ -21,6 +21,8 @@ set $prtKey Home
 set $menu walker
 # set $menu "qs -c noctalia-shell ipc call launcher toggle"
 
+exec_always dbus-update-activation-environment --systemd QT_FONT_DPI
+
 # for_window [app_id="walker"] focus
 
 focus_follows_mouse no
@@ -41,7 +43,7 @@ font pango:CaskaydiaCove Nerd Font, Noto Sans CJK SC 10
 
 exec_always --no-startup-id ~/.config/waybar/scripts/swaybg.sh
 
-exec waybar
+exec_always "pkill waybar; waybar"
 
 exec fcitx5 -d -r
 
@@ -237,7 +239,6 @@ bindsym $mod+r mode "resize"
 
 	bindsym $mod+p exec nautilus
 	bindsym $mod+b exec google-chrome-stable
-	bindsym $mod+return exec "pkill waybar; waybar"
 	bindsym $mod+Mod1+space exec sh -lc 'pkill -x fcitx5 && notify-send "Fcitx5" "已关闭输入法" || (fcitx5 -d -r && notify-send "Fcitx5" "已启动输入法")'
 
 default_border pixel 2
