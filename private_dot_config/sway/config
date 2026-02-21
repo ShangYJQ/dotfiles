@@ -41,7 +41,6 @@ font pango:CaskaydiaCove Nerd Font, Noto Sans CJK SC 10
 
 exec_always --no-startup-id ~/.config/waybar/scripts/swaybg.sh
 
-exec_always --no-startup-id pkill waybar
 exec_always --no-startup-id waybar
 
 exec_always --no-startup-id fcitx5 -d
