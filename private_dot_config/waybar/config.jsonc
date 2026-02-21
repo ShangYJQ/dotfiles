@@ -74,7 +74,8 @@
 
 	"custom/arch": {
 		"format": "󰣇",
-		"on-click": "kitty -e sh -lc 'fastfetch; exec $SHELL'",
+		"on-click": "~/.config/waybar/scripts/swaybg.sh next",
+		"on-click-right": "~/.config/waybar/scripts/swaybg.sh prev",
 		"tooltip": false,
 	},
 
