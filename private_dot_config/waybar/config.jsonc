@@ -12,7 +12,6 @@
 		"disk",
 		"temperature",
 		"battery",
-		// "custom/playerctl",
 		"custom/cava",
 	],
 	"modules-center": ["sway/workspaces", "sway/mode"],
@@ -21,6 +20,7 @@
 		"pulseaudio",
 		"backlight",
 		"network",
+		"bluetooth",
 		"custom/uptime",
 		"custom/nightlight",
 		"idle_inhibitor",
@@ -143,6 +143,7 @@
 	"memory": {
 		"format": "󰍛 {}%",
 		"interval": 1,
+		"tooltip-format": "Memory: {used} / {total} ({percentage}%)",
 		"on-click": "kitty -e htop",
 	},
 
@@ -174,6 +175,14 @@
 		"format-alt": "{ifname}: {ipaddr}/{cidr}",
 		"tooltip-format": "{ifname}: {ipaddr}",
 		"on-click": "kitty -e nmtui",
+	},
+
+	"bluetooth": {
+		"format": " {status}",
+		"format-connected": " {device_alias}",
+		"format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
+		"tooltip-format": "{controller_alias}\n{num_connections} connected",
+		"on-click": "kitty -e bluetui",
 	},
 
 	"pulseaudio": {
