@@ -31,9 +31,9 @@ for_window [app_id="org.gnome.Nautilus"] floating enable
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    swaybar_command waybar
-}
+# bar {
+#     swaybar_command waybar
+# }
 
 # set cursor and font
 seat seat0 xcursor_theme Bibata-Modern-Classic 20
@@ -41,9 +41,12 @@ font pango:CaskaydiaCove Nerd Font, Noto Sans CJK SC 10
 
 exec_always --no-startup-id ~/.config/waybar/scripts/swaybg.sh
 
-exec_always --no-startup-id walker --gapplication-service
+exec_always --no-startup-id pkill waybar
+exec_always --no-startup-id waybar
 
 exec_always --no-startup-id fcitx5 -d
+
+exec_always --no-startup-id walker --gapplication-service
 
 exec_always --no-startup-id swaync
 
