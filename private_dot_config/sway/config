@@ -48,10 +48,10 @@ exec_always "pkill waybar; waybar"
 exec fcitx5 -d -r
 
 exec --no-startup-id elephant
-exec_always --no-startup-id walker --gapplication-service
+exec --no-startup-id walker --gapplication-service
 
 # exec_always --no-startup-id swaync
-exec_always --no-startup-id mako
+# exec_always --no-startup-id mako
 
 ### Output configuration
 #
