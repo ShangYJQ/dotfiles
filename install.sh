@@ -38,6 +38,14 @@ AUR_PKGS=(
 	noctalia-shell
 	sddm-silent-theme-git
 	bibata-cursor-theme-bin
+	walker
+	elephant
+	elephant-providerlist
+	elephant-desktopapplications
+	elephant-files
+	elephant-runner
+	elephant-clipboard
+	elephant-symbols
 )
 
 echo ">> 准备安装所需的软件和依赖"
