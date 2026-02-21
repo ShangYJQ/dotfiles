@@ -45,6 +45,7 @@ exec_always --no-startup-id waybar
 
 exec_always --no-startup-id fcitx5 -d
 
+exec --no-startup-id elephant
 exec_always --no-startup-id walker --gapplication-service
 
 exec_always --no-startup-id swaync
