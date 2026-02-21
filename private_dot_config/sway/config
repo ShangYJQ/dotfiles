@@ -41,9 +41,9 @@ font pango:CaskaydiaCove Nerd Font, Noto Sans CJK SC 10
 
 exec_always --no-startup-id ~/.config/waybar/scripts/swaybg.sh
 
-exec_always --no-startup-id waybar
+exec waybar
 
-exec_always --no-startup-id fcitx5 -d
+exec fcitx5 -d -r
 
 exec --no-startup-id elephant
 exec_always --no-startup-id walker --gapplication-service
@@ -60,7 +60,7 @@ output eDP-2 resolution 2560x1600@165.002Hz position 0 0 scale 1.4
 
 ### Idle configuration
 
-exec_always --no-startup-id hypridle
+exec --no-startup-id hypridle -c ~/.config/hypr/hypridle-sway.conf
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -237,6 +237,8 @@ bindsym $mod+r mode "resize"
 
 	bindsym $mod+p exec nautilus
 	bindsym $mod+b exec google-chrome-stable
+	bindsym $mod+return exec "pkill waybar; waybar"
+	bindsym $mod+Mod1+space exec sh -lc 'pkill -x fcitx5 && notify-send "Fcitx5" "已关闭输入法" || (fcitx5 -d -r && notify-send "Fcitx5" "已启动输入法")'
 
 default_border pixel 2
 default_floating_border pixel 2
