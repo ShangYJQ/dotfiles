@@ -70,6 +70,7 @@
 		"on-click-middle": "playerctl play-pause",
 		"on-click-right": "playerctl next",
 		"on-click-left": "playerctl previous",
+		"tooltip": false,
 	},
 
 	"custom/arch": {
@@ -175,6 +176,7 @@
 		"format-alt": "{ifname}: {ipaddr}/{cidr}",
 		"tooltip-format": "{ifname}: {ipaddr}",
 		"on-click": "kitty -e nmtui",
+		"max-length": 16,
 	},
 
 	"bluetooth": {
@@ -183,6 +185,7 @@
 		"format-connected-battery": " {device_alias} ({device_battery_percentage}%)",
 		"tooltip-format": "{controller_alias}\n{num_connections} connected",
 		"on-click": "kitty -e bluetui",
+		// "max-length": 16,
 	},
 
 	"pulseaudio": {
