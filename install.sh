@@ -39,6 +39,7 @@ AUR_PKGS=(
 	sddm-silent-theme-git
 	bibata-cursor-theme-bin
 	walker
+	awww-git
 	elephant
 	elephant-providerlist
 	elephant-desktopapplications

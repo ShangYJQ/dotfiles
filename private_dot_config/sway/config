@@ -41,7 +41,9 @@ for_window [app_id="org.gnome.Nautilus"] floating enable
 seat seat0 xcursor_theme Bibata-Modern-Classic 20
 font pango:CaskaydiaCove Nerd Font, Noto Sans CJK SC 10
 
-exec_always --no-startup-id ~/.config/waybar/scripts/swaybg.sh
+# exec_always --no-startup-id ~/.config/waybar/scripts/swaybg.sh
+exec --no-startup-id awww-daemon
+exec_always --no-startup-id ~/.config/awww/wallpaper.sh
 
 exec_always "pkill waybar; waybar"
 
@@ -49,6 +51,12 @@ exec fcitx5 -d -r
 
 exec --no-startup-id elephant
 exec --no-startup-id walker --gapplication-service
+
+# exec swaymsg "workspace 1; exec kitty --class float_kitty"
+
+# for_window [app_id="float_kitty"] floating enable
+# for_window [app_id="float_kitty"] resize set 900 600
+# for_window [app_id="float_kitty"] move position center
 
 # exec_always --no-startup-id swaync
 # exec_always --no-startup-id mako

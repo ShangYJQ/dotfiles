@@ -75,8 +75,9 @@
 
 	"custom/arch": {
 		"format": "󰣇",
-		"on-click": "~/.config/waybar/scripts/swaybg.sh next",
-		"on-click-right": "~/.config/waybar/scripts/swaybg.sh prev",
+		"on-click": "~/.config/awww/wallpaper.sh next",
+		"on-click-right": "~/.config/awww/wallpaper.sh prev",
+		"on-click-middle": "~/.config/awww/wallpaper.sh random",
 		"tooltip": false,
 	},
 
