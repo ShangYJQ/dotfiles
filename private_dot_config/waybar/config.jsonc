@@ -176,7 +176,7 @@
 		"format-disconnected": "󰖪 Disconnected",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}",
 		"tooltip-format": "{ifname}: {ipaddr}",
-		"on-click": "kitty -e nmtui",
+		"on-click": "kitty -e wifitui",
 		"max-length": 16,
 	},
 
