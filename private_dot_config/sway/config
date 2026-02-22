@@ -249,6 +249,7 @@ bindsym $mod+r mode "resize"
 	bindsym $mod+p exec nautilus
 	bindsym $mod+b exec google-chrome-stable
 	bindsym $mod+Mod1+space exec sh -lc 'pkill -x fcitx5 && notify-send "Fcitx5" "已关闭输入法" || (fcitx5 -d -r && notify-send "Fcitx5" "已启动输入法")'
+	bindsym $mod+o exec --no-startup-id ~/.config/sway/scripts/toggle-ppd.sh
 
 default_border pixel 2
 default_floating_border pixel 2

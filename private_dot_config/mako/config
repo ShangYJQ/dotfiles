@@ -12,3 +12,11 @@ border-size=2
 max-icon-size=32
 font=CaskaydiaCove Nerd Font Propo 16px
 
+[urgency=low]
+on-notify=exec ~/.config/mako/scripts/notify-sound.sh low
+
+[urgency=normal]
+on-notify=exec ~/.config/mako/scripts/notify-sound.sh
+
+[urgency=high]
+on-notify=exec ~/.config/mako/scripts/notify-sound.sh critical
