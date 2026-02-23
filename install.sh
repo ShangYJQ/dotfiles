@@ -30,6 +30,8 @@ PACMAN_PKGS=(
 	zoxide
 	slurp
 	swappy
+	# 语言输入
+	whisper.cpp
 )
 
 AUR_PKGS=(

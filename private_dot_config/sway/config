@@ -251,6 +251,10 @@ bindsym $mod+r mode "resize"
 	bindsym $mod+Mod1+space exec sh -lc 'pkill -x fcitx5 && notify-send "Fcitx5" "已关闭输入法" || (fcitx5 -d -r && notify-send "Fcitx5" "已启动输入法")'
 	bindsym $mod+o exec --no-startup-id ~/.config/sway/scripts/toggle-ppd.sh
 
+	# whisper2text
+	bindsym $mod+x exec ~/.config/sway/scripts/whisper2clip-press.sh
+	bindsym --release $mod+x exec ~/.config/sway/scripts/whisper2clip-release.sh
+
 default_border pixel 2
 default_floating_border pixel 2
 

@@ -5,16 +5,19 @@
 ## 同步
 
 ### 在新机器上(需要 `git` `paru` `chezmoi`)：
+
 ```bash
 chezmoi init --apply git@github.com:ShangYJQ/dotfiles.git
 ```
 
 ## 依赖安装
+
 ```bash
 chezmoi cd && ./install.sh
 ```
 
 ## 其他
+
 ```bash
 #安装omz
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -43,5 +46,7 @@ EOF
 cd /usr/share/sddm/themes/silent/
 ./test.sh
 
+# 配置语音输入 (whisper.cpp)
+cd .local/share/whisper/models
+wget https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-medium.bin
 ```
-
