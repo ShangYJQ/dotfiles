@@ -48,5 +48,6 @@ cd /usr/share/sddm/themes/silent/
 
 # 配置语音输入 (whisper.cpp)
 cd .local/share/whisper/models
-wget https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-medium.bin
+wget https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo.bin
+wget https://huggingface.co/ggml-org/whisper-vad/resolve/main/ggml-silero-v6.2.0.bin
 ```

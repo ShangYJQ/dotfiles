@@ -5,7 +5,9 @@ PIDFILE="/tmp/whisper2clip-rec.pid"
 WAV="/tmp/whisper2clip.wav"
 OUTTXT="/tmp/whisper2clip.txt"
 
-MODEL="${WHISPER_MODEL:-$HOME/.local/share/whisper/models/ggml-medium.bin}"
+MODEL="${WHISPER_MODEL:-$HOME/.local/share/whisper/models/ggml-large-v3-turbo.bin}"
+VADMODEL="$HOME/.local/share/whisper/models/ggml-silero-v6.2.0.bin"
+
 LANG="${WHISPER_LANG:-zh}"
 
 # 停止录音
@@ -33,11 +35,10 @@ fi
 notify-send -t 1200 " Whisper" "正在识别…"
 
 text="$(
-	/usr/bin/whisper-cli -m "$MODEL" -f "$WAV" -l "$LANG" 2>/dev/null |
+	/usr/bin/whisper-cli -m "$MODEL" -f "$WAV" -l "$LANG" -nt --vad -vm "$VADMODEL" 2>/tmp/wislog.log |
 		tr -d '\r' |
-		sed -E 's/\[[0-9:.]+[[:space:]]*-->[[:space:]]*[0-9:.]+\][[:space:]]*//g' |
 		tr '\n' ' ' |
-		sed -E 's/[[:space:]]+/ /g; s/^[[:space:]]+//; s/[[:space:]]+$//'
+		sed -E 's/\[[0-9:.]+[[:space:]]*-->[[:space:]]*[0-9:.]+\][[:space:]]*//g'
 )"
 
 if [[ -z "${text}" ]]; then
