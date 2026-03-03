@@ -54,5 +54,5 @@ wget https://huggingface.co/ggml-org/whisper-vad/resolve/main/ggml-silero-v6.2.0
 #  ai commits
 bun i -g aicommits@develop
 aicommits setup
-aicommits config set PROMPT=$'请使用 Conventional Commits 规范写一条提交信息。\n格式必须为：type(scope 可选): 中文描述。\n每一行长度不得超过 74 个字符。\n请使用中文（zh-CN）输出。\n如果能从分支名 {branch} 推断出 issue 编号，请把它加在提交标题末尾，并用括号包裹。\n\n（提示：使用这个 hint 来改进提交信息：$hint）\n\n之前的提交信息：\n{previousCommitMessages}\n\nDiff：\n{diff}\n\n只输出最终的 commit message，不要输出任何解释。'
+aicommits config set type=conventional locale=zh max-length=74
 ```
