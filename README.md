@@ -50,4 +50,8 @@ cd /usr/share/sddm/themes/silent/
 cd .local/share/whisper/models
 wget https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo.bin
 wget https://huggingface.co/ggml-org/whisper-vad/resolve/main/ggml-silero-v6.2.0.bin
+
+#  ai commits
+bun i -g aicommits@develop
+aicommits setup
 ```
