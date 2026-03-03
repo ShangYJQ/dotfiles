@@ -27,6 +27,14 @@ mkdir -p ~/.oh-my-zsh/custom/plugins
 ln -s /usr/share/zsh/plugins/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 ln -s /usr/share/zsh/plugins/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 
+# 添加 fctix5 环境变量
+sudo tee -a /etc/environment > /dev/null << 'EOF'
+GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+SDL_IM_MODULE=fcitx
+EOF
+
 # clone nvim config
 git clone git@github.com:ShangYJQ/nvim-lite.git ~/.config/nvim
 
