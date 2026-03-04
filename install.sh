@@ -30,6 +30,7 @@ PACMAN_PKGS=(
 	zoxide
 	slurp
 	swappy
+	hyprpicker
 	# 语言输入
 	whisper.cpp
 )
