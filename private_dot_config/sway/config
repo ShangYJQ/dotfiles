@@ -67,7 +67,24 @@ exec --no-startup-id walker --gapplication-service
 # output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
-output eDP-2 resolution 2560x1600@165.002Hz position 0 0 scale 1.4
+
+# 多屏幕适配
+output DP-2 resolution 2560x1440@180.001Hz position 0 0 scale 1.0
+output eDP-2 resolution 2560x1600@165.002Hz position 2560 0 scale 1.6 transform 270
+
+# 只保留一个在右边的屏幕
+workspace 1 output DP-2
+workspace 2 output DP-2
+workspace 3 output DP-2
+workspace 4 output DP-2
+workspace 5 output DP-2
+workspace 6 output DP-2
+workspace 7 output DP-2
+workspace 8 output DP-2
+workspace 9 output DP-2
+workspace 10 output eDP-2
+
+exec_always --no-startup-id swaymsg workspace 1
 
 ### Idle configuration
 
@@ -250,10 +267,11 @@ bindsym $mod+r mode "resize"
 	bindsym $mod+b exec google-chrome-stable
 	bindsym $mod+Mod1+space exec sh -lc 'pkill -x fcitx5 && notify-send "Fcitx5" "已关闭输入法" || (fcitx5 -d -r && notify-send "Fcitx5" "已启动输入法")'
 	bindsym $mod+o exec --no-startup-id ~/.config/sway/scripts/toggle-ppd.sh
+	bindsym $mod+c exec hyprpicker | wl-copy
 
 	# whisper2text
-	bindsym $mod+x exec ~/.config/sway/scripts/whisper2clip-press.sh
-	bindsym --release $mod+x exec ~/.config/sway/scripts/whisper2clip-release.sh
+	# bindsym $mod+x exec ~/.config/sway/scripts/whisper2clip-press.sh
+	# bindsym --release $mod+x exec ~/.config/sway/scripts/whisper2clip-release.sh
 
 default_border pixel 2
 default_floating_border pixel 2
