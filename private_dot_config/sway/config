@@ -21,7 +21,7 @@ set $prtKey Home
 set $menu walker
 # set $menu "qs -c noctalia-shell ipc call launcher toggle"
 
-exec_always dbus-update-activation-environment --systemd QT_FONT_DPI
+exec_always dbus-update-activation-environment --systemd QT_FONT_DPI WAYLAND_DISPLAY DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway
 
 # for_window [app_id="walker"] focus
 
