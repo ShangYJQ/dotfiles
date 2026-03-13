@@ -1,0 +1,6 @@
+font-family = "CaskaydiaCove Nerd Font"
+font-size = 14
+
+theme = Catppuccin Mocha
+
+custom-shader = shaders/cursor_sweep.glsl
