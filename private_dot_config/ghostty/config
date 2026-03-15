@@ -1,7 +1,7 @@
 font-family = "CaskaydiaCove Nerd Font"
 font-size = 14
 
-theme = Catppuccin Frappe
+theme = Catppuccin Macchiato
 
 custom-shader = shaders/cursor_sweep.glsl
 
