@@ -5,4 +5,4 @@ theme = Catppuccin Mocha
 
 custom-shader = shaders/cursor_sweep.glsl
 
-config-file = keybinds.conf
+# config-file = keybinds.conf
