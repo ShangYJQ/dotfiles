@@ -28,7 +28,14 @@ hidden = false
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name"]
-right = ["file-type", "diagnostics", "position", "position-percentage", "file-encoding", "file-line-ending"]
+right = [
+	"file-type",
+	"diagnostics",
+	"position",
+	"position-percentage",
+	"file-encoding",
+	"file-line-ending",
+]
 separator = "│"
 mode.normal = " "
 mode.insert = " "

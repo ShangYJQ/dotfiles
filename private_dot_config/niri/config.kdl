@@ -57,7 +57,7 @@ input {
         // off
         // natural-scroll
         // accel-speed 0.2
-        // accel-profile "flat"
+        accel-profile "flat"
         // scroll-method "no-scroll"
     }
 
@@ -247,7 +247,7 @@ layout {
 
 spawn-at-startup "qs" "-c" "noctalia-shell"
 spawn-at-startup "hypridle"
-// spawn-sh-at-startup "~/.config/niri/scripts/swayidle.sh"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
 
 hotkey-overlay {
     // Uncomment this line to disable the "Important Hotkeys" pop-up at startup.
@@ -356,6 +356,10 @@ binds {
     Mod+L     { focus-column-right; }
 
 
+
+    Mod+MouseForward { focus-column-left; }
+    Mod+MouseBack { focus-column-right; }
+
     Mod+B       { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "bar" "toggle"; }
 
     Mod+Ctrl+Left  { move-column-left; }
@@ -374,8 +378,9 @@ binds {
     // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
     // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
 
-    Mod+Home { focus-column-first; }
-    Mod+End  { focus-column-last; }
+    // Mod+Home { focus-column-first; }
+    // Mod+End  { focus-column-last; }
+
     Mod+Ctrl+Home { move-column-to-first; }
     Mod+Ctrl+End  { move-column-to-last; }
 
@@ -405,12 +410,13 @@ binds {
     // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
     // ...
 
-    Mod+Page_Down      { focus-workspace-down; }
-    Mod+Page_Up        { focus-workspace-up; }
+    // Mod+End      { focus-workspace-down; }
+    // Mod+Home        { focus-workspace-up; }
+
     Mod+U              { focus-workspace-down; }
     Mod+I              { focus-workspace-up; }
-    Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
-    Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
+    // Mod+Ctrl+End { move-column-to-workspace-down; }
+    // Mod+Ctrl+Home   { move-column-to-workspace-up; }
     Mod+Ctrl+U         { move-column-to-workspace-down; }
     Mod+Ctrl+I         { move-column-to-workspace-up; }
 
@@ -548,9 +554,9 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Home { screenshot; }
+    Ctrl+Home { screenshot-screen; }
+    Alt+Home { screenshot-window; }
 
     Mod+Print { spawn-sh "qs -c noctalia-shell ipc call plugin:screen-recorder toggle"; }
 
@@ -574,3 +580,4 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 }
 include "./noctalia.kdl"
+include "./outputs.kdl"

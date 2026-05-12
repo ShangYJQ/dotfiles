@@ -15,7 +15,9 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 # set $term kitty
-set $term ghostty
+# set $term ghostty
+set $term env __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia __VK_LAYER_NV_optimus=NVIDIA_only ghostty
+
 # set prt key
 set $prtKey Home
 # Your preferred application launcher
@@ -71,7 +73,7 @@ exec --no-startup-id walker --gapplication-service
 
 # 多屏幕适配
 output DP-2 resolution 2560x1440@180.001Hz position 0 0 scale 1.0
-output eDP-2 resolution 2560x1600@165.002Hz position 2560 0 scale 1.6 transform 270
+output eDP-2 resolution 2560x1600@60.002Hz position 2560 0 scale 1.6 transform 270
 
 # 只保留一个在右边的屏幕
 workspace 1 output DP-2
